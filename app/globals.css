@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Font Variables */
+    --font-display: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* shadcn/ui color variables (kept for compatibility) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* LEDream Design Tokens */
+    --neon-red: #FF3D00;
+    --neon-red-light: #FF6B35;
+    --neon-blue: #00F0FF;
+    --neon-blue-light: #0099FF;
+    --neon-purple: #BF00FF;
+    --neon-purple-light: #9D4EDD;
+    --neon-magenta: #FF10F0;
+    --neon-magenta-light: #FF006E;
+    --neon-green: #39FF14;
+    --dark-black: #0A0A0A;
+    --dark-brick: #1A0F0F;
+    --dark-brick-light: #2D1B1B;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-dark-black text-foreground font-body;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Brick Wall Texture Background */
+  .bg-brick-wall {
+    background-color: var(--dark-brick);
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+      );
+    background-size: 40px 20px;
+    position: relative;
+  }
+
+  .bg-brick-wall::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%),
+      linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* Neon Text Effects */
+  .neon-text-red {
+    color: var(--neon-red);
+    text-shadow: 
+      0 0 5px var(--neon-red),
+      0 0 10px var(--neon-red),
+      0 0 15px var(--neon-red),
+      0 0 20px var(--neon-red);
+  }
+
+  .neon-text-blue {
+    color: var(--neon-blue);
+    text-shadow: 
+      0 0 5px var(--neon-blue),
+      0 0 10px var(--neon-blue),
+      0 0 15px var(--neon-blue),
+      0 0 20px var(--neon-blue);
+  }
+
+  .neon-text-purple {
+    color: var(--neon-purple);
+    text-shadow: 
+      0 0 5px var(--neon-purple),
+      0 0 10px var(--neon-purple),
+      0 0 15px var(--neon-purple),
+      0 0 20px var(--neon-purple);
+  }
+
+  .neon-text-magenta {
+    color: var(--neon-magenta);
+    text-shadow: 
+      0 0 5px var(--neon-magenta),
+      0 0 10px var(--neon-magenta),
+      0 0 15px var(--neon-magenta),
+      0 0 20px var(--neon-magenta);
+  }
+
+  .neon-text-green {
+    color: var(--neon-green);
+    text-shadow: 
+      0 0 5px var(--neon-green),
+      0 0 10px var(--neon-green),
+      0 0 15px var(--neon-green),
+      0 0 20px var(--neon-green);
+  }
+
+  .neon-text-multicolor {
+    background: linear-gradient(
+      90deg,
+      var(--neon-red) 0%,
+      var(--neon-magenta) 25%,
+      var(--neon-purple) 50%,
+      var(--neon-blue) 75%,
+      var(--neon-green) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+    filter: drop-shadow(0 0 5px var(--neon-red)) 
+            drop-shadow(0 0 10px var(--neon-purple)) 
+            drop-shadow(0 0 15px var(--neon-blue));
+  }
+
+  /* Neon Border Effects */
+  .neon-border-red {
+    border: 2px solid var(--neon-red);
+    box-shadow: 
+      0 0 5px var(--neon-red),
+      0 0 10px var(--neon-red),
+      inset 0 0 5px var(--neon-red);
+  }
+
+  .neon-border-blue {
+    border: 2px solid var(--neon-blue);
+    box-shadow: 
+      0 0 5px var(--neon-blue),
+      0 0 10px var(--neon-blue),
+      inset 0 0 5px var(--neon-blue);
+  }
+
+  .neon-border-purple {
+    border: 2px solid var(--neon-purple);
+    box-shadow: 
+      0 0 5px var(--neon-purple),
+      0 0 10px var(--neon-purple),
+      inset 0 0 5px var(--neon-purple);
+  }
+
+  .neon-border-multicolor {
+    border: 2px solid transparent;
+    background: 
+      linear-gradient(var(--dark-black), var(--dark-black)) padding-box,
+      linear-gradient(90deg, var(--neon-red), var(--neon-magenta), var(--neon-purple), var(--neon-blue)) border-box;
+    box-shadow: 
+      0 0 10px var(--neon-red),
+      0 0 20px var(--neon-purple),
+      0 0 30px var(--neon-blue);
+  }
+
+  /* Geometric Shapes */
+  .shape-diamond {
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: currentColor;
+    position: relative;
+  }
+
+  .shape-diamond::after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: currentColor;
+  }
+
+  .shape-circle-glow {
+    border-radius: 50%;
+    box-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+
+  /* Marquee Light Effect */
+  .marquee-light {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .marquee-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: marquee-scroll 3s linear infinite;
+  }
+
+  /* Accessible Text Colors (WCAG AA compliant) */
+  .text-neon-accessible-red {
+    color: var(--neon-red-light);
+    text-shadow: 
+      0 0 5px var(--neon-red),
+      0 0 10px var(--neon-red);
+  }
+
+  .text-neon-accessible-blue {
+    color: var(--neon-blue-light);
+    text-shadow: 
+      0 0 5px var(--neon-blue),
+      0 0 10px var(--neon-blue);
+  }
+
+  .text-neon-accessible-purple {
+    color: var(--neon-purple-light);
+    text-shadow: 
+      0 0 5px var(--neon-purple),
+      0 0 10px var(--neon-purple);
+  }
+}
+
+@layer utilities {
+  /* Gradient Background Utilities */
+  .bg-gradient-neon-red-blue {
+    background: linear-gradient(135deg, var(--neon-red) 0%, var(--neon-blue) 100%);
+  }
+
+  .bg-gradient-neon-purple-magenta {
+    background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-magenta) 100%);
+  }
+
+  .bg-gradient-neon-rainbow {
+    background: linear-gradient(
+      135deg,
+      var(--neon-red) 0%,
+      var(--neon-magenta) 25%,
+      var(--neon-purple) 50%,
+      var(--neon-blue) 75%,
+      var(--neon-green) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Glow Utilities */
+  .glow-red {
+    box-shadow: 
+      0 0 5px var(--neon-red),
+      0 0 10px var(--neon-red),
+      0 0 15px var(--neon-red),
+      0 0 20px var(--neon-red);
+  }
+
+  .glow-blue {
+    box-shadow: 
+      0 0 5px var(--neon-blue),
+      0 0 10px var(--neon-blue),
+      0 0 15px var(--neon-blue),
+      0 0 20px var(--neon-blue);
+  }
+
+  .glow-purple {
+    box-shadow: 
+      0 0 5px var(--neon-purple),
+      0 0 10px var(--neon-purple),
+      0 0 15px var(--neon-purple),
+      0 0 20px var(--neon-purple);
+  }
+
+  .glow-multicolor {
+    box-shadow: 
+      0 0 5px var(--neon-red),
+      0 0 10px var(--neon-purple),
+      0 0 15px var(--neon-blue),
+      0 0 20px var(--neon-magenta);
+  }
+
+  /* Performance Optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
