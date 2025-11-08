@@ -10,7 +10,8 @@ const inter = Inter({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-heading",
+  weight: ["400", "600", "700", "900"],
   display: "swap",
 });
 

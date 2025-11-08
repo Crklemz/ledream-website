@@ -12,16 +12,13 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1280px',
+        '3xl': '1536px',
       },
     },
     extend: {
-      fontFamily: {
-        display: ['var(--font-display)', 'sans-serif'],
-        body: ['var(--font-body)', 'sans-serif'],
-      },
       colors: {
-        // shadcn/ui colors (kept for compatibility)
+        // shadcn/ui colors
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -55,7 +52,7 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // LEDream neon color palette
+        // LEDream Neon Colors
         neon: {
           red: {
             DEFAULT: '#FF3D00',
@@ -77,13 +74,43 @@ module.exports = {
             DEFAULT: '#39FF14',
           },
         },
+        // LEDream Dark Colors
         dark: {
           black: '#0A0A0A',
+          navy: {
+            DEFAULT: '#1A1A2E',
+            light: '#16213E',
+          },
           brick: {
             DEFAULT: '#1A0F0F',
             light: '#2D1B1B',
           },
         },
+        // Neutral Colors
+        neutral: {
+          lightGray: '#E8E8E8',
+          white: '#FFFFFF',
+        },
+      },
+      fontFamily: {
+        heading: ['var(--font-heading)', 'Montserrat', 'Bebas Neue', 'Rajdhani', 'sans-serif'],
+        body: ['var(--font-body)', 'Inter', 'DM Sans', 'Work Sans', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': ['3rem', { lineHeight: '1.2', fontWeight: '900' }],
+        'h2': ['2.5rem', { lineHeight: '1.2', fontWeight: '700' }],
+        'h3': ['1.875rem', { lineHeight: '1.3', fontWeight: '700' }],
+        'h4': ['1.5rem', { lineHeight: '1.4', fontWeight: '600' }],
+        'h5': ['1.25rem', { lineHeight: '1.4', fontWeight: '600' }],
+        'h6': ['1.125rem', { lineHeight: '1.5', fontWeight: '600' }],
+      },
+      spacing: {
+        'section-mobile': '4rem',
+        'section-desktop': '6rem',
+      },
+      maxWidth: {
+        'container-standard': '1280px',
+        'container-wide': '1536px',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -91,31 +118,19 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       boxShadow: {
-        'neon-red': '0 0 10px #FF3D00, 0 0 20px #FF3D00, 0 0 30px #FF3D00',
-        'neon-blue': '0 0 10px #00F0FF, 0 0 20px #00F0FF, 0 0 30px #00F0FF',
-        'neon-purple': '0 0 10px #BF00FF, 0 0 20px #BF00FF, 0 0 30px #BF00FF',
-        'neon-magenta': '0 0 10px #FF10F0, 0 0 20px #FF10F0, 0 0 30px #FF10F0',
-        'neon-green': '0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14',
-        'neon-multicolor':
-          '0 0 10px #FF3D00, 0 0 20px #00F0FF, 0 0 30px #BF00FF, 0 0 40px #FF10F0',
-        'glow-red': '0 0 5px #FF3D00, 0 0 10px #FF3D00, 0 0 15px #FF3D00, 0 0 20px #FF3D00',
-        'glow-blue': '0 0 5px #00F0FF, 0 0 10px #00F0FF, 0 0 15px #00F0FF, 0 0 20px #00F0FF',
-        'glow-purple': '0 0 5px #BF00FF, 0 0 10px #BF00FF, 0 0 15px #BF00FF, 0 0 20px #BF00FF',
-      },
-      textShadow: {
-        'neon-red': '0 0 5px #FF3D00, 0 0 10px #FF3D00, 0 0 15px #FF3D00',
-        'neon-blue': '0 0 5px #00F0FF, 0 0 10px #00F0FF, 0 0 15px #00F0FF',
-        'neon-purple': '0 0 5px #BF00FF, 0 0 10px #BF00FF, 0 0 15px #BF00FF',
-        'neon-magenta': '0 0 5px #FF10F0, 0 0 10px #FF10F0, 0 0 15px #FF10F0',
-        'neon-green': '0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 15px #39FF14',
-        'neon-multicolor':
-          '0 0 5px #FF3D00, 0 0 10px #00F0FF, 0 0 15px #BF00FF, 0 0 20px #FF10F0',
+        'neon-subtle': '0 0 5px currentColor, 0 0 10px currentColor',
+        'neon-medium': '0 0 10px currentColor, 0 0 20px currentColor',
+        'neon-strong': '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
+        'neon-red': '0 0 10px #FF3D00, 0 0 20px #FF3D00',
+        'neon-blue': '0 0 10px #00F0FF, 0 0 20px #00F0FF',
+        'neon-purple': '0 0 10px #BF00FF, 0 0 20px #BF00FF',
+        'neon-magenta': '0 0 10px #FF10F0, 0 0 20px #FF10F0',
+        'neon-green': '0 0 10px #39FF14, 0 0 20px #39FF14',
       },
       backgroundImage: {
         'gradient-neon-red-blue': 'linear-gradient(135deg, #FF3D00 0%, #00F0FF 100%)',
         'gradient-neon-purple-magenta': 'linear-gradient(135deg, #BF00FF 0%, #FF10F0 100%)',
-        'gradient-neon-rainbow':
-          'linear-gradient(135deg, #FF3D00 0%, #FF10F0 25%, #BF00FF 50%, #00F0FF 75%, #39FF14 100%)',
+        'gradient-neon-rainbow': 'linear-gradient(135deg, #FF3D00 0%, #FF10F0 25%, #BF00FF 50%, #00F0FF 75%, #39FF14 100%)',
         'gradient-neon-diagonal': 'linear-gradient(45deg, #FF3D00, #00F0FF, #BF00FF, #FF10F0)',
         'gradient-dark-brick': 'linear-gradient(180deg, #1A0F0F 0%, #2D1B1B 100%)',
       },
@@ -134,40 +149,16 @@ module.exports = {
             filter: 'brightness(1)',
           },
           '50%': {
-            opacity: '0.8',
-            filter: 'brightness(1.2)',
+            opacity: '0.85',
+            filter: 'brightness(1.15)',
           },
         },
         'glow-pulse': {
           '0%, 100%': {
-            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+            textShadow: '0 0 5px currentColor, 0 0 10px currentColor',
           },
           '50%': {
             textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
-          },
-        },
-        'glow-pulse-red': {
-          '0%, 100%': {
-            textShadow: '0 0 5px #FF3D00, 0 0 10px #FF3D00, 0 0 15px #FF3D00',
-          },
-          '50%': {
-            textShadow: '0 0 10px #FF3D00, 0 0 20px #FF3D00, 0 0 30px #FF3D00',
-          },
-        },
-        'glow-pulse-blue': {
-          '0%, 100%': {
-            textShadow: '0 0 5px #00F0FF, 0 0 10px #00F0FF, 0 0 15px #00F0FF',
-          },
-          '50%': {
-            textShadow: '0 0 10px #00F0FF, 0 0 20px #00F0FF, 0 0 30px #00F0FF',
-          },
-        },
-        'glow-pulse-purple': {
-          '0%, 100%': {
-            textShadow: '0 0 5px #BF00FF, 0 0 10px #BF00FF, 0 0 15px #BF00FF',
-          },
-          '50%': {
-            textShadow: '0 0 10px #BF00FF, 0 0 20px #BF00FF, 0 0 30px #BF00FF',
           },
         },
         'gradient-shift': {
@@ -181,33 +172,14 @@ module.exports = {
             backgroundPosition: '0% 50%',
           },
         },
-        'flicker': {
-          '0%, 100%': {
-            opacity: '1',
-          },
-          '41.99%': {
-            opacity: '1',
-          },
-          '42%': {
+        'fade-in': {
+          '0%': {
             opacity: '0',
+            transform: 'translateY(20px)',
           },
-          '43%': {
-            opacity: '0',
-          },
-          '43.01%': {
+          '100%': {
             opacity: '1',
-          },
-          '47.99%': {
-            opacity: '1',
-          },
-          '48%': {
-            opacity: '0',
-          },
-          '49%': {
-            opacity: '0',
-          },
-          '49.01%': {
-            opacity: '1',
+            transform: 'translateY(0)',
           },
         },
         'marquee-scroll': {
@@ -224,18 +196,20 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-        'glow-pulse-red': 'glow-pulse-red 2s ease-in-out infinite',
-        'glow-pulse-blue': 'glow-pulse-blue 2s ease-in-out infinite',
-        'glow-pulse-purple': 'glow-pulse-purple 2s ease-in-out infinite',
         'gradient-shift': 'gradient-shift 3s ease infinite',
-        'flicker': 'flicker 0.15s infinite',
+        'fade-in': 'fade-in 0.5s ease-out',
         'marquee-scroll': 'marquee-scroll 20s linear infinite',
+      },
+      transitionDuration: {
+        'fast': '150ms',
+        'normal': '300ms',
+        'slow': '500ms',
       },
     },
   },
   plugins: [
     require('tailwindcss-animate'),
-    function ({ addUtilities }) {
+    function ({ addUtilities, theme }) {
       addUtilities({
         '.text-shadow': {
           textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -248,6 +222,16 @@ module.exports = {
         },
         '.text-shadow-none': {
           textShadow: 'none',
+        },
+        // Neon text shadow utilities
+        '.text-shadow-neon-subtle': {
+          textShadow: '0 0 5px currentColor, 0 0 10px currentColor',
+        },
+        '.text-shadow-neon-medium': {
+          textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+        },
+        '.text-shadow-neon-strong': {
+          textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor, 0 0 20px currentColor',
         },
       });
     },

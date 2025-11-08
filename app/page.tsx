@@ -1,86 +1,101 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-dark-black bg-brick-wall">
-      <div className="container mx-auto px-4 py-24">
-        <div className="text-center space-y-8">
-          {/* Hero Title */}
-          <h1 className="font-display text-7xl md:text-9xl font-black neon-text-multicolor animate-glow-pulse">
+    <main className="min-h-screen bg-dark-black">
+      {/* Hero Section */}
+      <section className="section-dark section-padding">
+        <div className="container-standard text-center">
+          <h1 className="text-h1 neon-text-multicolor animate-glow-pulse mb-6">
             LEDream
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-white font-body text-xl md:text-2xl max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-white max-w-2xl mx-auto mb-8">
             A psychedelic neon experience powered by Next.js 16
           </p>
+          <div className="flex gap-4 justify-center">
+            <button className="btn-neon-red">Get Started</button>
+            <button className="btn-neon-outline border-neon-blue text-neon-blue">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
 
-          {/* Color Showcase */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16 max-w-4xl mx-auto">
-            <div className="space-y-2">
-              <div className="h-20 bg-neon-red rounded-lg glow-red"></div>
-              <p className="text-neon-red text-sm font-body">Red</p>
+      {/* Color Showcase */}
+      <section className="section-navy section-padding">
+        <div className="container-standard">
+          <h2 className="text-h2 text-neutral-white mb-12 text-center">
+            Neon Color Palette
+          </h2>
+          <div className="grid-4-col">
+            <div className="text-center space-y-4">
+              <div className="h-24 bg-neon-red rounded-lg shadow-neon-red flex items-center justify-center">
+                <span className="text-dark-black font-bold">Red</span>
+              </div>
+              <p className="neon-text-red text-sm">#FF3D00</p>
             </div>
-            <div className="space-y-2">
-              <div className="h-20 bg-neon-blue rounded-lg glow-blue"></div>
-              <p className="text-neon-blue text-sm font-body">Blue</p>
+            <div className="text-center space-y-4">
+              <div className="h-24 bg-neon-blue rounded-lg shadow-neon-blue flex items-center justify-center">
+                <span className="text-dark-black font-bold">Blue</span>
+              </div>
+              <p className="neon-text-blue text-sm">#00F0FF</p>
             </div>
-            <div className="space-y-2">
-              <div className="h-20 bg-neon-purple rounded-lg glow-purple"></div>
-              <p className="text-neon-purple text-sm font-body">Purple</p>
+            <div className="text-center space-y-4">
+              <div className="h-24 bg-neon-purple rounded-lg shadow-neon-purple flex items-center justify-center">
+                <span className="text-neutral-white font-bold">Purple</span>
+              </div>
+              <p className="neon-text-purple text-sm">#BF00FF</p>
             </div>
-            <div className="space-y-2">
-              <div className="h-20 bg-neon-magenta rounded-lg"></div>
-              <p className="text-neon-magenta text-sm font-body">Magenta</p>
-            </div>
-            <div className="space-y-2">
-              <div className="h-20 bg-neon-green rounded-lg"></div>
-              <p className="text-neon-green text-sm font-body">Green</p>
+            <div className="text-center space-y-4">
+              <div className="h-24 bg-neon-magenta rounded-lg flex items-center justify-center">
+                <span className="text-neutral-white font-bold">Magenta</span>
+              </div>
+              <p className="neon-text-magenta text-sm">#FF10F0</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Example Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto">
-            <div className="bg-dark-brick neon-border-red p-6 rounded-lg">
-              <h3 className="neon-text-red font-display text-2xl mb-4">
-                Neon Red
-              </h3>
-              <p className="text-white font-body">
-                Classic neon red glow effect
+      {/* Feature Cards */}
+      <section className="section-brick section-padding">
+        <div className="container-standard">
+          <h2 className="text-h2 text-neutral-white mb-12 text-center">
+            Design System Features
+          </h2>
+          <div className="grid-3-col">
+            <div className="card-neon-red">
+              <h3 className="text-h3 neon-text-red mb-4">Neon Effects</h3>
+              <p className="text-neutral-white">
+                Subtle, medium, and strong glow effects for text and borders
               </p>
             </div>
-
-            <div className="bg-dark-brick neon-border-blue p-6 rounded-lg">
-              <h3 className="neon-text-blue font-display text-2xl mb-4">
-                Electric Blue
-              </h3>
-              <p className="text-white font-body">
-                Vibrant electric blue neon
+            <div className="card-neon-blue">
+              <h3 className="text-h3 neon-text-blue mb-4">Clean Layouts</h3>
+              <p className="text-neutral-white">
+                Professional structure with spacious dark backgrounds
               </p>
             </div>
-
-            <div className="bg-dark-brick neon-border-purple p-6 rounded-lg">
-              <h3 className="neon-text-purple font-display text-2xl mb-4">
-                Purple Power
-              </h3>
-              <p className="text-white font-body">
-                Psychedelic purple glow
-              </p>
-            </div>
-          </div>
-
-          {/* Animated Gradient Example */}
-          <div className="mt-16 max-w-2xl mx-auto">
-            <div className="bg-gradient-neon-rainbow animate-gradient-shift p-8 rounded-lg">
-              <h2 className="font-display text-4xl font-bold text-dark-black mb-4">
-                Animated Gradient
-              </h2>
-              <p className="text-dark-black font-body">
-                Smooth gradient animation showcasing all neon colors
+            <div className="card-neon-purple">
+              <h3 className="text-h3 neon-text-purple mb-4">Smooth Animations</h3>
+              <p className="text-neutral-white">
+                Purposeful animations with reduced motion support
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Gradient Example */}
+      <section className="section-dark section-padding">
+        <div className="container-standard">
+          <div className="bg-gradient-neon-rainbow animate-gradient-shift p-12 rounded-lg text-center">
+            <h2 className="text-h2 text-dark-black mb-4 font-black">
+              Animated Gradient
+            </h2>
+            <p className="text-dark-black text-lg">
+              Smooth gradient animation showcasing all neon colors
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
-

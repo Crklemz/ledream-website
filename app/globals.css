@@ -4,11 +4,7 @@
 
 @layer base {
   :root {
-    /* Font Variables */
-    --font-display: 'Montserrat', sans-serif;
-    --font-body: 'Inter', sans-serif;
-
-    /* shadcn/ui color variables (kept for compatibility) */
+    /* shadcn/ui color variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -41,27 +37,31 @@
     --neon-magenta-light: #FF006E;
     --neon-green: #39FF14;
     --dark-black: #0A0A0A;
+    --dark-navy: #1A1A2E;
+    --dark-navy-light: #16213E;
     --dark-brick: #1A0F0F;
     --dark-brick-light: #2D1B1B;
+    --neutral-light-gray: #E8E8E8;
+    --neutral-white: #FFFFFF;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --background: 10 10 4;
+    --foreground: 0 0% 98%;
+    --card: 10 10 4;
+    --card-foreground: 0 0% 98%;
+    --popover: 10 10 4;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 10 10 4;
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -73,16 +73,96 @@
     @apply border-border;
   }
   body {
-    @apply bg-dark-black text-foreground font-body;
+    @apply bg-dark-black text-neutral-white font-body;
     font-family: var(--font-body);
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 700;
+    font-family: var(--font-heading);
+    @apply font-heading;
   }
 }
 
 @layer components {
+  /* Section Utilities */
+  .section-dark {
+    @apply bg-dark-black text-neutral-white;
+  }
+
+  .section-navy {
+    @apply bg-dark-navy text-neutral-white;
+  }
+
+  .section-brick {
+    @apply bg-dark-brick text-neutral-white;
+  }
+
+  .section-padding {
+    @apply py-section-mobile md:py-section-desktop;
+  }
+
+  /* Container Utilities */
+  .container-standard {
+    @apply max-w-container-standard mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-container-wide mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card Utilities */
+  .card-neon {
+    @apply bg-dark-brick border border-dark-navy rounded-lg p-6;
+    @apply shadow-lg transition-all duration-normal;
+  }
+
+  .card-neon:hover {
+    @apply shadow-neon-medium border-opacity-50;
+    transform: translateY(-2px);
+  }
+
+  .card-neon-red {
+    @apply card-neon border-neon-red;
+    box-shadow: 0 0 10px rgba(255, 61, 0, 0.3);
+  }
+
+  .card-neon-blue {
+    @apply card-neon border-neon-blue;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  }
+
+  .card-neon-purple {
+    @apply card-neon border-neon-purple;
+    box-shadow: 0 0 10px rgba(191, 0, 255, 0.3);
+  }
+
+  /* Button Utilities */
+  .btn-neon {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-normal;
+    @apply border-2 border-transparent;
+  }
+
+  .btn-neon-red {
+    @apply btn-neon bg-neon-red text-neutral-white border-neon-red;
+    @apply hover:bg-neon-red-light hover:shadow-neon-red;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-neon-blue {
+    @apply btn-neon bg-neon-blue text-dark-black border-neon-blue;
+    @apply hover:bg-neon-blue-light hover:shadow-neon-blue;
+  }
+
+  .btn-neon-purple {
+    @apply btn-neon bg-neon-purple text-neutral-white border-neon-purple;
+    @apply hover:bg-neon-purple-light hover:shadow-neon-purple;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-neon-outline {
+    @apply btn-neon bg-transparent text-current border-current;
+    @apply hover:bg-current hover:text-dark-black;
+  }
+
   /* Brick Wall Texture Background */
   .bg-brick-wall {
     background-color: var(--dark-brick);
@@ -124,8 +204,7 @@
     text-shadow: 
       0 0 5px var(--neon-red),
       0 0 10px var(--neon-red),
-      0 0 15px var(--neon-red),
-      0 0 20px var(--neon-red);
+      0 0 15px var(--neon-red);
   }
 
   .neon-text-blue {
@@ -133,8 +212,7 @@
     text-shadow: 
       0 0 5px var(--neon-blue),
       0 0 10px var(--neon-blue),
-      0 0 15px var(--neon-blue),
-      0 0 20px var(--neon-blue);
+      0 0 15px var(--neon-blue);
   }
 
   .neon-text-purple {
@@ -142,8 +220,7 @@
     text-shadow: 
       0 0 5px var(--neon-purple),
       0 0 10px var(--neon-purple),
-      0 0 15px var(--neon-purple),
-      0 0 20px var(--neon-purple);
+      0 0 15px var(--neon-purple);
   }
 
   .neon-text-magenta {
@@ -151,8 +228,7 @@
     text-shadow: 
       0 0 5px var(--neon-magenta),
       0 0 10px var(--neon-magenta),
-      0 0 15px var(--neon-magenta),
-      0 0 20px var(--neon-magenta);
+      0 0 15px var(--neon-magenta);
   }
 
   .neon-text-green {
@@ -160,8 +236,7 @@
     text-shadow: 
       0 0 5px var(--neon-green),
       0 0 10px var(--neon-green),
-      0 0 15px var(--neon-green),
-      0 0 20px var(--neon-green);
+      0 0 15px var(--neon-green);
   }
 
   .neon-text-multicolor {
@@ -208,45 +283,6 @@
       inset 0 0 5px var(--neon-purple);
   }
 
-  .neon-border-multicolor {
-    border: 2px solid transparent;
-    background: 
-      linear-gradient(var(--dark-black), var(--dark-black)) padding-box,
-      linear-gradient(90deg, var(--neon-red), var(--neon-magenta), var(--neon-purple), var(--neon-blue)) border-box;
-    box-shadow: 
-      0 0 10px var(--neon-red),
-      0 0 20px var(--neon-purple),
-      0 0 30px var(--neon-blue);
-  }
-
-  /* Geometric Shapes */
-  .shape-diamond {
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-bottom-color: currentColor;
-    position: relative;
-  }
-
-  .shape-diamond::after {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 20px;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top-color: currentColor;
-  }
-
-  .shape-circle-glow {
-    border-radius: 50%;
-    box-shadow: 
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor;
-  }
-
   /* Marquee Light Effect */
   .marquee-light {
     position: relative;
@@ -263,32 +299,23 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1),
       transparent
     );
     animation: marquee-scroll 3s linear infinite;
   }
 
-  /* Accessible Text Colors (WCAG AA compliant) */
-  .text-neon-accessible-red {
-    color: var(--neon-red-light);
-    text-shadow: 
-      0 0 5px var(--neon-red),
-      0 0 10px var(--neon-red);
+  /* Grid Utilities */
+  .grid-2-col {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
   }
 
-  .text-neon-accessible-blue {
-    color: var(--neon-blue-light);
-    text-shadow: 
-      0 0 5px var(--neon-blue),
-      0 0 10px var(--neon-blue);
+  .grid-3-col {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
   }
 
-  .text-neon-accessible-purple {
-    color: var(--neon-purple-light);
-    text-shadow: 
-      0 0 5px var(--neon-purple),
-      0 0 10px var(--neon-purple);
+  .grid-4-col {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
   }
 }
 
@@ -338,14 +365,6 @@
       0 0 10px var(--neon-purple),
       0 0 15px var(--neon-purple),
       0 0 20px var(--neon-purple);
-  }
-
-  .glow-multicolor {
-    box-shadow: 
-      0 0 5px var(--neon-red),
-      0 0 10px var(--neon-purple),
-      0 0 15px var(--neon-blue),
-      0 0 20px var(--neon-magenta);
   }
 
   /* Performance Optimizations */
