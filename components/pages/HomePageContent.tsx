@@ -41,14 +41,10 @@ import { featuredPortfolioProjects } from "@/content/portfolio";
 import { processSteps } from "@/content/process";
 
 export function HomePageContent() {
-  // Map package overview to PackageCard format
+  // Use packages directly - they already match PackageCard format
   const packageCards = packages.map((pkg) => ({
-    name: pkg.name,
-    price: pkg.priceDisplay,
-    tagline: pkg.tagline,
-    features: pkg.features.slice(0, 4), // Top 4 features
-    color: pkg.tierColor as "red" | "blue" | "purple" | "magenta" | "green",
-    badge: pkg.badge === "Popular" ? "Most Popular" : undefined,
+    ...pkg,
+    features: pkg.features.slice(0, 4), // Top 4 features for homepage preview
   }));
 
   // Map projects to ProjectCard format

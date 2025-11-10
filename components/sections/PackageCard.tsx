@@ -1,23 +1,19 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-export interface Package {
-  name: string;
-  price: string;
-  tagline: string;
-  features: string[];
-  color: "red" | "blue" | "purple" | "magenta" | "green";
-  badge?: string;
-}
+import type { Package as ContentPackage } from "@/content/types";
 
 export interface PackageCardProps {
   /**
    * Package data object
    */
-  package: Package;
+  package: ContentPackage;
+  /**
+   * Optional icon component (from lucide-react)
+   */
+  icon?: LucideIcon;
   /**
    * CTA button text
    * @default "Get Started"
@@ -35,6 +31,10 @@ export interface PackageCardProps {
    * Click handler
    */
   onClick?: () => void;
+  /**
+   * Whether this card should be highlighted/elevated
+   */
+  highlighted?: boolean;
 }
 
 /**
@@ -61,10 +61,12 @@ export interface PackageCardProps {
  */
 export function PackageCard({
   package: pkg,
+  icon: Icon,
   ctaText = "Get Started",
   ctaHref,
   className,
   onClick,
+  highlighted = false,
 }: PackageCardProps) {
   const colorClasses = {
     red: {
@@ -97,9 +99,9 @@ export function PackageCard({
       text: "text-neon-green",
       button: "btn-neon-outline border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-black",
     },
-  };
+  } as const;
 
-  const colors = colorClasses[pkg.color];
+  const colors = colorClasses[pkg.tierColor] ?? colorClasses.blue;
 
   return (
     <div
@@ -110,6 +112,12 @@ export function PackageCard({
         "hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg",
         colors.border,
         colors.shadow,
+        highlighted && "ring-2 ring-offset-2 ring-offset-dark-black",
+        highlighted && pkg.tierColor === "blue" && "ring-neon-blue",
+        highlighted && pkg.tierColor === "purple" && "ring-neon-purple",
+        highlighted && pkg.tierColor === "magenta" && "ring-neon-magenta",
+        highlighted && pkg.tierColor === "red" && "ring-neon-red",
+        highlighted && pkg.tierColor === "green" && "ring-neon-green",
         onClick && "cursor-pointer",
         className
       )}
@@ -130,6 +138,20 @@ export function PackageCard({
         </div>
       )}
 
+      {/* Icon */}
+      {Icon && (
+        <div className="mb-4">
+          <div
+            className={cn(
+              "inline-flex p-3 rounded-lg bg-dark-navy border border-current/30",
+              colors.text
+            )}
+          >
+            <Icon className="h-6 w-6" />
+          </div>
+        </div>
+      )}
+
       {/* Package Name */}
       <h3
         className={cn(
@@ -143,7 +165,7 @@ export function PackageCard({
       {/* Price */}
       <div className="mb-2">
         <span className="text-3xl md:text-4xl font-bold text-neutral-white">
-          {pkg.price}
+          {pkg.priceDisplay}
         </span>
       </div>
 
