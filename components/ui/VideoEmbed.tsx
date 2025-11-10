@@ -60,6 +60,33 @@ export function VideoEmbed({
     return match && match[2].length === 11 ? match[2] : null;
   };
 
+  // Handle TBD videos
+  if (videoUrl === "TBD" || videoUrl.toUpperCase() === "TBD") {
+    return (
+      <div
+        className={cn(
+          "relative aspect-video rounded-lg overflow-hidden",
+          "border-2 border-neon-blue/30 shadow-neon-blue/20",
+          "bg-gradient-to-br from-dark-navy via-dark-brick to-dark-navy",
+          "flex flex-col items-center justify-center",
+          "text-center p-8",
+          className
+        )}
+      >
+        <div className="absolute inset-0 bg-dark-black/60" />
+        <div className="relative z-10">
+          <Play className="h-16 w-16 text-neon-blue/50 mx-auto mb-4" />
+          <p className="text-neutral-white text-lg font-semibold mb-2">
+            Video Coming Soon
+          </p>
+          <p className="text-neutral-white/60 text-sm">
+            We're working on bringing you the full experience
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const videoId = getYouTubeId(videoUrl);
   const embedUrl = videoId
     ? `https://www.youtube.com/embed/${videoId}`

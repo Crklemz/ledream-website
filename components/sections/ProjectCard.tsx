@@ -5,7 +5,9 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import type { Project as PortfolioProject } from "@/content/types";
 
+// Legacy interface for backward compatibility
 export interface Project {
   title: string;
   description: string;
@@ -18,9 +20,9 @@ export interface Project {
 
 export interface ProjectCardProps {
   /**
-   * Project data object
+   * Project data object (portfolio or legacy format)
    */
-  project: Project;
+  project: PortfolioProject | Project;
   /**
    * Additional CSS classes
    */
@@ -56,12 +58,23 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Check if it's a portfolio project (has images array) or legacy (has image string)
+  const isPortfolioProject = "images" in project;
+  const imageSrc = isPortfolioProject
+    ? project.images[0] || "/placeholder.jpg"
+    : project.image;
+  const imageAlt = "imageAlt" in project ? project.imageAlt : project.title;
+  const categoryDisplay =
+    isPortfolioProject && project.category
+      ? project.category.charAt(0).toUpperCase() + project.category.slice(1)
+      : project.category;
+
   return (
     <div
       className={cn(
         "group bg-dark-brick rounded-lg overflow-hidden",
         "transition-all duration-normal",
-        "hover:scale-[1.02] hover:shadow-lg",
+        "hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1",
         onClick && "cursor-pointer",
         className
       )}
@@ -72,31 +85,32 @@ export function ProjectCard({
       {/* Image Container */}
       <div className="relative aspect-video overflow-hidden bg-dark-navy">
         <Image
-          src={project.image}
-          alt={project.imageAlt || project.title}
+          src={imageSrc}
+          alt={imageAlt || project.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className={cn(
             "object-cover transition-all duration-normal",
             isHovered && "brightness-110 scale-105"
           )}
         />
-        {/* Neon Frame Overlay on Hover */}
+        {/* Neon Frame Overlay - subtle by default, intensifies on hover */}
         <div
           className={cn(
-            "absolute inset-0 border-2 border-transparent transition-all duration-normal",
+            "absolute inset-0 border-2 border-neon-blue/20 transition-all duration-normal",
             isHovered && "border-neon-blue shadow-neon-blue"
           )}
         />
         {/* Category Badge */}
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 z-10">
           <span className="bg-dark-black/80 backdrop-blur-sm text-neon-blue text-xs font-semibold px-3 py-1 rounded-full border border-neon-blue/50">
-            {project.category}
+            {categoryDisplay}
           </span>
         </div>
         {/* View Details Button (appears on hover) */}
         <div
           className={cn(
-            "absolute inset-0 flex items-center justify-center",
+            "absolute inset-0 flex items-center justify-center z-10",
             "bg-dark-black/60 backdrop-blur-sm",
             "transition-opacity duration-normal",
             isHovered ? "opacity-100" : "opacity-0"
