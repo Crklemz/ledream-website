@@ -190,6 +190,22 @@ module.exports = {
             transform: 'translateX(-100%)',
           },
         },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-20px)',
+          },
+        },
+        'float-delayed': {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-15px)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -199,6 +215,8 @@ module.exports = {
         'gradient-shift': 'gradient-shift 3s ease infinite',
         'fade-in': 'fade-in 0.5s ease-out',
         'marquee-scroll': 'marquee-scroll 20s linear infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'float-delayed': 'float-delayed 3.5s ease-in-out infinite',
       },
       transitionDuration: {
         'fast': '150ms',
