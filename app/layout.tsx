@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { Header, Footer } from "@/components/layout";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.variable} ${montserrat.variable} font-body`}>
-        {children}
+        <Header />
+        <main className="pt-16 md:pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-dark-black">
+    <div className="min-h-screen bg-dark-black">
       {/* Hero Section */}
       <section className="section-dark section-padding">
         <div className="container-standard text-center">
@@ -96,6 +96,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
