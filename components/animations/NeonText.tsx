@@ -81,10 +81,12 @@ export function NeonText({
         "font-heading font-bold",
         colorClasses[color],
         intensityClasses[intensity],
-        animated && "animate-glow-pulse",
+        animated && "animate-glow-pulse-slow",
+        animated && "will-change-[text-shadow] transform-gpu",
         "transition-all duration-normal",
         className
       )}
+      style={animated ? { transform: 'translateZ(0)' } : undefined}
     >
       {text}
     </Component>

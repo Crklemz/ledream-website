@@ -19,11 +19,6 @@ const navigationLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-const legalLinks = [
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Terms of Service", href: "/terms" },
-];
-
 const socialLinks = [
   {
     name: "Instagram",
@@ -102,24 +97,6 @@ export function Footer() {
                 </Link>
               ))}
             </nav>
-            <div className="mt-6 pt-6 border-t border-dark-navy">
-              <nav className="flex flex-col gap-3" aria-label="Legal links">
-                {legalLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={cn(
-                      "text-xs text-neutral-white/60",
-                      "transition-colors duration-normal",
-                      "hover:text-neon-magenta focus:text-neon-magenta",
-                      "focus:outline-none focus:ring-2 focus:ring-neon-magenta focus:ring-offset-2 focus:ring-offset-dark-black rounded-sm"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
           </div>
 
           {/* Get In Touch Column */}

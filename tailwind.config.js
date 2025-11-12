@@ -161,6 +161,16 @@ module.exports = {
             textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
           },
         },
+        'glow-pulse-slow': {
+          '0%, 100%': {
+            textShadow: '0 0 2px currentColor',
+            opacity: '1',
+          },
+          '50%': {
+            textShadow: '0 0 15px currentColor, 0 0 25px currentColor, 0 0 35px currentColor',
+            opacity: '1',
+          },
+        },
         'gradient-shift': {
           '0%': {
             backgroundPosition: '0% 50%',
@@ -212,6 +222,7 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+        'glow-pulse-slow': 'glow-pulse-slow 4s ease-in-out infinite',
         'gradient-shift': 'gradient-shift 3s ease infinite',
         'fade-in': 'fade-in 0.5s ease-out',
         'marquee-scroll': 'marquee-scroll 20s linear infinite',

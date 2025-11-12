@@ -287,8 +287,8 @@ export function HomePageContent() {
       </SectionContainer>
 
       {/* Featured Projects Gallery */}
-      <SectionContainer variant="dark" id="portfolio">
-        <div className="text-center mb-16">
+      <SectionContainer variant="dark">
+        <div className="text-center mb-16" id="portfolio">
           <h2 className="text-h2 text-neutral-white mb-4">Our Latest Masterpieces</h2>
           <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
             Visit our gallery of memories & imagine the endless possibilities
