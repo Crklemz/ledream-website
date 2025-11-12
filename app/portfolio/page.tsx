@@ -8,6 +8,7 @@ import { SectionContainer } from "@/components/layout/SectionContainer";
 import { ProjectGrid } from "@/components/sections/ProjectGrid";
 import { ProjectDetailModal } from "@/components/sections/ProjectDetailModal";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import { portfolioMetadata, projects, galleryIntro } from "@/content/portfolio";
 import { contactInfo, siteConfig } from "@/content/site";
 import type { Project } from "@/content/types";
@@ -128,8 +129,13 @@ export default function PortfolioPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <SectionContainer variant="darker" className="py-16 md:py-24">
-        <div className="text-center space-y-8">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <VideoBackground
+          videoSrc="/LED Dream - Psych Funhouse Promo.mp4"
+          overlayOpacity={0.7}
+          overlayColor="dark-black"
+        />
+        <div className="text-center space-y-8 relative z-10">
           <div className="space-y-4">
             <h2 className="text-h2 text-neutral-white font-heading">
               Imagine Your Own Masterpiece
@@ -154,7 +160,7 @@ export default function PortfolioPage() {
             />
           </div>
         </div>
-      </SectionContainer>
+      </section>
 
       {/* Project Detail Modal */}
       <ProjectDetailModal
