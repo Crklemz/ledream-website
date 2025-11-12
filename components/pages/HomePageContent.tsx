@@ -30,6 +30,7 @@ import { ProjectCard } from "@/components/sections/ProjectCard";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
 import { IconFeature } from "@/components/ui/IconFeature";
 import { VideoEmbed } from "@/components/ui/VideoEmbed";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import {
   heroContent,
   featuredProjects,
@@ -78,7 +79,11 @@ export function HomePageContent() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <GradientBackground darkOverlay speed="slow" className="absolute inset-0" />
+        <VideoBackground
+          videoSrc="/Outer Space Symphony.mp4"
+          overlayOpacity={0.7}
+          overlayColor="dark-black"
+        />
         <div className="relative z-10 container-standard text-center px-4 py-24 md:py-32">
           {/* Decorative Elements */}
           <div className="absolute top-20 left-10 md:left-20 opacity-30 animate-float">

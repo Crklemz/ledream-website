@@ -129,7 +129,7 @@ export default function PortfolioPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative py-32 md:py-40 overflow-hidden">
         <VideoBackground
           videoSrc="/LED Dream - Psych Funhouse Promo.mp4"
           overlayOpacity={0.7}

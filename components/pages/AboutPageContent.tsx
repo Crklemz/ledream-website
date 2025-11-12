@@ -20,6 +20,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 import { NeonCard } from "@/components/ui/NeonCard";
 import { IconFeature } from "@/components/ui/IconFeature";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import {
   welcomeMessage,
   originStory,
@@ -149,20 +150,26 @@ export function AboutPageContent() {
       </SectionContainer>
 
       {/* What is LED Art Section */}
-      <SectionContainer variant="darker">
-        <div className="text-center mb-12">
-          <NeonText
-            text="What is LED Art?"
-            color="blue"
-            intensity="medium"
-            as="h2"
-            className="text-3xl md:text-4xl lg:text-5xl mb-6"
-          />
-          <p className="text-lg text-neutral-white/80 max-w-3xl mx-auto leading-relaxed">
-            LED art is more than lighting—it's a medium for transformation, a canvas for creativity, and a portal to new dimensions of experience.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <VideoBackground
+          videoSrc="/Reefer Dreamers.mp4"
+          overlayOpacity={0.7}
+          overlayColor="dark-black"
+        />
+        <div className="relative z-10 container-standard">
+          <div className="text-center mb-12">
+            <NeonText
+              text="What is LED Art?"
+              color="blue"
+              intensity="medium"
+              as="h2"
+              className="text-3xl md:text-4xl lg:text-5xl mb-6"
+            />
+            <p className="text-lg text-neutral-white/80 max-w-3xl mx-auto leading-relaxed">
+              LED art is more than lighting—it's a medium for transformation, a canvas for creativity, and a portal to new dimensions of experience.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12">
           {ledArtSections.map((section, index) => {
             const Icon = ledArtIcons[index];
             return (
@@ -176,8 +183,9 @@ export function AboutPageContent() {
               </FadeInOnScroll>
             );
           })}
+          </div>
         </div>
-      </SectionContainer>
+      </section>
 
       {/* Why LEDream Section */}
       <SectionContainer variant="dark">
