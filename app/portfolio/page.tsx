@@ -96,27 +96,27 @@ export default function PortfolioPage() {
       />
 
       {/* Hero Section */}
-      <SectionContainer variant="gradient" className="relative overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <GradientBackground
           colors={["#FF3D00", "#00F0FF", "#BF00FF", "#FF10F0"]}
-          speed="medium"
+          speed="slow"
           darkOverlay
-        >
-          <div className="relative z-10 text-center space-y-6 py-16 md:py-24">
-            <NeonText
-              text="Our Latest Masterpieces"
-              color="blue"
-              intensity="strong"
-              animated
-              as="h1"
-              className="text-4xl md:text-5xl lg:text-6xl"
-            />
-            <p className="text-neutral-white/90 text-lg md:text-xl max-w-2xl mx-auto">
-              {galleryIntro}
-            </p>
-          </div>
-        </GradientBackground>
-      </SectionContainer>
+          className="absolute inset-0"
+        />
+        <div className="relative z-10 container-standard text-center px-4 py-24 md:py-32">
+          <NeonText
+            text="Our Latest Masterpieces"
+            color="multicolor"
+            intensity="strong"
+            animated
+            as="h1"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6"
+          />
+          <p className="text-lg md:text-xl lg:text-2xl text-neutral-white/90 max-w-3xl mx-auto leading-relaxed">
+            {galleryIntro}
+          </p>
+        </div>
+      </section>
 
       {/* Projects Grid Section */}
       <SectionContainer variant="dark" className="py-16 md:py-24">

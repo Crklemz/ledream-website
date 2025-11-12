@@ -136,7 +136,7 @@ export function ServicesPageContent() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <GradientBackground darkOverlay speed="slow" className="absolute inset-0" />
         <div className="relative z-10 container-standard text-center px-4 py-24 md:py-32">
           {/* Decorative Elements */}
