@@ -1,0 +1,5 @@
+# Exclude large video files from Vercel deployment
+# These can be hosted on a CDN or external storage if needed
+public/*.mp4
+# Keep logo PNG - it's small enough (1.9MB)
+

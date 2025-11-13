@@ -42,7 +42,7 @@ const contactFormSchema = z.object({
       "Custom Package",
     ],
     {
-      required_error: "Please select a service interest",
+      message: "Please select a service interest",
     }
   ),
   projectType: z

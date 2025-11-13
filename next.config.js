@@ -38,6 +38,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
+              "media-src 'self' https://*.blob.vercel-storage.com https://*.public.blob.vercel-storage.com https://l3wz3kdpa46deroj.public.blob.vercel-storage.com",
               "font-src 'self' data:",
               "connect-src 'self'",
               "frame-ancestors 'self'",

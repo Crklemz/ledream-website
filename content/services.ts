@@ -145,7 +145,7 @@ export const faqItems = [
 /**
  * Process Preview Steps
  */
-export const processSteps = [
+export const serviceProcessPreview = [
   {
     step: 1,
     title: "Consultation",

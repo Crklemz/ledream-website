@@ -68,14 +68,32 @@ export function VideoBackground({
     const video = videoRef.current;
     if (!video) return;
 
+    // Log video source for debugging
+    if (process.env.NODE_ENV === "development") {
+      console.log("VideoBackground src:", videoSrc);
+    }
+
+    // Handle video errors
+    const handleError = (e: Event) => {
+      console.error("Video error:", e);
+      console.error("Video src:", videoSrc);
+      console.error("Video error details:", video.error);
+    };
+
+    video.addEventListener("error", handleError);
+
     // Ensure video plays
     const playPromise = video.play();
     if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Autoplay was prevented, which is fine
+      playPromise.catch((error) => {
+        console.warn("Video autoplay prevented:", error);
       });
     }
-  }, []);
+
+    return () => {
+      video.removeEventListener("error", handleError);
+    };
+  }, [videoSrc]);
 
   const overlayColorClasses = {
     "dark-black": "bg-dark-black",

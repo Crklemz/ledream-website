@@ -40,7 +40,7 @@ import {
   pageIntro,
   commonInclusions,
   faqItems,
-  processSteps,
+  serviceProcessPreview,
 } from "@/content/services";
 import { contactInfo } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -167,11 +167,11 @@ export function ServicesPageContent() {
           </FadeInOnScroll>
 
           {/* Brief Intro */}
-          <FadeInOnScroll delay={200}>
+          {/* <FadeInOnScroll delay={200}>
             <p className="text-base md:text-lg text-neutral-white/70 max-w-2xl mx-auto leading-relaxed">
               {pageIntro}
             </p>
-          </FadeInOnScroll>
+          </FadeInOnScroll> */}
         </div>
       </section>
 
@@ -338,7 +338,7 @@ export function ServicesPageContent() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mt-12">
-          {processSteps.map((step, index) => {
+          {serviceProcessPreview.map((step, index) => {
             const Icon = processIcons[index];
             return (
               <FadeInOnScroll key={step.step} delay={index * 150}>

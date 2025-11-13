@@ -131,7 +131,7 @@ export default function PortfolioPage() {
       {/* CTA Section */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <VideoBackground
-          videoSrc="/LED Dream - Psych Funhouse Promo.mp4"
+          videoSrc={process.env.NEXT_PUBLIC_VIDEO_PSYCH_FUNHOUSE_PROMO || ""}
           overlayOpacity={0.7}
           overlayColor="dark-black"
         />
