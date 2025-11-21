@@ -193,46 +193,58 @@ export function HomePageContent() {
       </SectionContainer>
 
       {/* What We Create Section */}
-      <SectionContainer variant="darker">
-        <div className="text-center mb-16">
-          <h2 className="text-h2 text-neutral-white mb-4">Transform Your Space</h2>
-          <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
-            Step into a world of wonder & excitement with our dazzling LED art.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          <FadeInOnScroll delay={0}>
-            <NeonCard
-              variant="blue"
-              title="Immersive Transformations"
-              description="Your space re-imagined with custom lightscapes, kinetic effects & color symphonies that transport guests to another universe."
-              icon={Sparkles}
-            />
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={100}>
-            <NeonCard
-              variant="purple"
-              title="Architectural Alchemy"
-              description="Thresholds, corridors, ceilings & hidden nooks reshaped into vibrant portals to surprise & delight."
-              icon={Layers}
-            />
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={200}>
-            <NeonCard
-              variant="magenta"
-              title="Signature Statement Pieces"
-              description="One-of-a-kind LED art installations -- bold centerpieces designed to make guests pause, photograph & remember."
-              icon={Lightbulb}
-            />
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={300}>
-            <NeonCard
-              variant="green"
-              title="Mood-Responsive Ambience"
-              description="Lighting that adapts with music, emotion or time of day -- perfectly tailored to your gathering, gala or feeling."
-              icon={Music}
-            />
-          </FadeInOnScroll>
+      <SectionContainer variant="darker" className="relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/1.JPG)',
+          }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-dark-black/70" />
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-h2 text-neutral-white mb-4">Transform Your Space</h2>
+            <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
+              Step into a world of wonder & excitement with our dazzling LED art.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <FadeInOnScroll delay={0}>
+              <NeonCard
+                variant="blue"
+                title="Immersive Transformations"
+                description="Your space re-imagined with custom lightscapes, kinetic effects & color symphonies that transport guests to another universe."
+                icon={Sparkles}
+              />
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={100}>
+              <NeonCard
+                variant="purple"
+                title="Architectural Alchemy"
+                description="Thresholds, corridors, ceilings & hidden nooks reshaped into vibrant portals to surprise & delight."
+                icon={Layers}
+              />
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={200}>
+              <NeonCard
+                variant="magenta"
+                title="Signature Statement Pieces"
+                description="One-of-a-kind LED art installations -- bold centerpieces designed to make guests pause, photograph & remember."
+                icon={Lightbulb}
+              />
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={300}>
+              <NeonCard
+                variant="green"
+                title="Mood-Responsive Ambience"
+                description="Lighting that adapts with music, emotion or time of day -- perfectly tailored to your gathering, gala or feeling."
+                icon={Music}
+              />
+            </FadeInOnScroll>
+          </div>
         </div>
       </SectionContainer>
 
