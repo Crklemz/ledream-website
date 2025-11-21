@@ -80,7 +80,7 @@ export function HomePageContent() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <VideoBackground
-          videoSrc={process.env.NEXT_PUBLIC_VIDEO_OUTER_SPACE_SYMPHONY || ""}
+          videoSrc='/promo1.mp4'
           overlayOpacity={0.7}
           overlayColor="dark-black"
         />

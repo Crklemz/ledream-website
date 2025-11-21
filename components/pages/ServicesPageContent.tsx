@@ -21,6 +21,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 import { IconFeature } from "@/components/ui/IconFeature";
 import { PackageCard } from "@/components/sections/PackageCard";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import {
   Table,
   TableBody,
@@ -299,8 +300,12 @@ export function ServicesPageContent() {
       </SectionContainer>
 
       {/* Custom Package Section */}
-      <SectionContainer variant="gradient" className="relative overflow-hidden">
-        <GradientBackground darkOverlay speed="medium" className="absolute inset-0" />
+      <section className="relative py-32 md:py-40 overflow-hidden">
+        <VideoBackground
+          videoSrc="/OSS2.mp4"
+          overlayOpacity={0.7}
+          overlayColor="dark-black"
+        />
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           <FadeInOnScroll delay={0}>
             <div className="mb-6 flex justify-center">
@@ -324,7 +329,7 @@ export function ServicesPageContent() {
             />
           </FadeInOnScroll>
         </div>
-      </SectionContainer>
+      </section>
 
       {/* Process Preview Section */}
       <SectionContainer variant="dark">

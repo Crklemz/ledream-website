@@ -15,10 +15,9 @@ interface LogoProps {
  * Video logo with PNG fallback for browsers that don't support video
  */
 export function Logo({ className, size = "md" }: LogoProps) {
-  // Check if logo video URL is available (must be a Blob URL)
-  const logoVideoUrl = process.env.NEXT_PUBLIC_VIDEO_LOGO || "";
-  const hasVideoUrl = logoVideoUrl && logoVideoUrl.startsWith("http");
-  const [useFallback, setUseFallback] = useState(!hasVideoUrl);
+  // Use local video logo file
+  const logoVideoUrl = "/LEDream-Video-logo.mp4";
+  const [useFallback, setUseFallback] = useState(false);
 
   const sizeClasses = {
     sm: "h-[30px] w-auto",

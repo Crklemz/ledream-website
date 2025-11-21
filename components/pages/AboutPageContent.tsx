@@ -152,7 +152,7 @@ export function AboutPageContent() {
       {/* What is LED Art Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <VideoBackground
-          videoSrc={process.env.NEXT_PUBLIC_VIDEO_REEFER_DREAMERS || ""}
+          videoSrc="/OSS1.mp4"
           overlayOpacity={0.7}
           overlayColor="dark-black"
         />

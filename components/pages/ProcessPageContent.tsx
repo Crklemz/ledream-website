@@ -19,6 +19,7 @@ import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 import { IconFeature } from "@/components/ui/IconFeature";
 import { NeonCard } from "@/components/ui/NeonCard";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { VideoBackground } from "@/components/ui/VideoBackground";
 import {
   Accordion,
   AccordionContent,
@@ -141,44 +142,51 @@ export function ProcessPageContent() {
       </SectionContainer>
 
       {/* Support & Maintenance Section */}
-      <SectionContainer variant="dark">
-        <div className="text-center mb-12">
-          <NeonText
-            text={supportContent.title}
-            color="blue"
-            intensity="medium"
-            as="h2"
-            className="text-3xl md:text-4xl lg:text-5xl mb-6"
-          />
-          <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto leading-relaxed">
-            {supportContent.description}
-          </p>
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <VideoBackground
+          videoSrc="/OSS3.mp4"
+          overlayOpacity={0.7}
+          overlayColor="dark-black"
+        />
+        <div className="relative z-10 container-standard">
+          <div className="text-center mb-12">
+            <NeonText
+              text={supportContent.title}
+              color="blue"
+              intensity="medium"
+              as="h2"
+              className="text-3xl md:text-4xl lg:text-5xl mb-6"
+            />
+            <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto leading-relaxed">
+              {supportContent.description}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+            {supportContent.items.map((item, index) => {
+              const icons = [Headphones, Wrench, Sparkles, HelpCircle];
+              const Icon = icons[index] || HelpCircle;
+              return (
+                <FadeInOnScroll key={item.title} delay={index * 100}>
+                  <NeonCard
+                    variant={index % 2 === 0 ? "blue" : "purple"}
+                    title={item.title}
+                    description={item.description}
+                    icon={Icon}
+                  />
+                </FadeInOnScroll>
+              );
+            })}
+          </div>
+          <div className="text-center">
+            <CTAButton
+              text="Contact Support"
+              href={`mailto:${contactInfo.email}`}
+              variant="secondary"
+              size="md"
+            />
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {supportContent.items.map((item, index) => {
-            const icons = [Headphones, Wrench, Sparkles, HelpCircle];
-            const Icon = icons[index] || HelpCircle;
-            return (
-              <FadeInOnScroll key={item.title} delay={index * 100}>
-                <NeonCard
-                  variant={index % 2 === 0 ? "blue" : "purple"}
-                  title={item.title}
-                  description={item.description}
-                  icon={Icon}
-                />
-              </FadeInOnScroll>
-            );
-          })}
-        </div>
-        <div className="text-center">
-          <CTAButton
-            text="Contact Support"
-            href={`mailto:${contactInfo.email}`}
-            variant="secondary"
-            size="md"
-          />
-        </div>
-      </SectionContainer>
+      </section>
 
       {/* Package Comparison Context */}
       <SectionContainer variant="darker">
