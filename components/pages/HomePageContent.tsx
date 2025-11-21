@@ -231,7 +231,7 @@ export function HomePageContent() {
               <img 
                 src="/13.jpg" 
                 alt="LEDream installation" 
-                className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto rounded-sm border-2 border-neutral-white/20 hover:border-neutral-white/40 transition-colors"
+                className="w-32 sm:w-36 md:w-40 lg:w-44 h-auto rounded-sm border-2 border-neutral-white/20 hover:border-neutral-white/40 transition-colors"
               />
             </div>
           </div>
