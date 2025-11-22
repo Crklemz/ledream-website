@@ -82,7 +82,7 @@ export function HomePageContent() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <VideoBackground
           videoSrc='/promo1.mp4'
-          overlayOpacity={0.7}
+          overlayOpacity={0.5}
           overlayColor="dark-black"
         />
         <div className="relative z-10 container-standard text-center px-4 py-24 md:py-32">
