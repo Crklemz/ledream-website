@@ -139,24 +139,24 @@ export function HomePageContent() {
         <div className="text-center mb-12">
           <h2 className="text-h2 text-neutral-white mb-4">Trusted by dreamers. Venues transformed</h2>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-normal">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 transition-all duration-normal">
           {/* Placeholder Client Logos - Replace with actual logos */}
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-blue/20 rounded px-4 hover:border-neon-blue hover:shadow-neon-blue transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-blue rounded px-4 shadow-neon-blue hover:shadow-neon-blue hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Conga Latin Bistro</span>
           </div>
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-purple/20 rounded px-4 hover:border-neon-purple hover:shadow-neon-purple transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-purple rounded px-4 shadow-neon-purple hover:shadow-neon-purple hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Granada Theater</span>
           </div>
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-magenta/20 rounded px-4 hover:border-neon-magenta hover:shadow-neon-magenta transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-magenta rounded px-4 shadow-neon-magenta hover:shadow-neon-magenta hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Jester's Wondrous Funhouse</span>
           </div>
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-green/20 rounded px-4 hover:border-neon-green hover:shadow-neon-green transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-green rounded px-4 shadow-neon-green hover:shadow-neon-green hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Central Mix</span>
           </div>
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-blue/20 rounded px-4 hover:border-neon-blue hover:shadow-neon-blue transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-blue rounded px-4 shadow-neon-blue hover:shadow-neon-blue hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Rev Underground</span>
           </div>
-          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-purple/20 rounded px-4 hover:border-neon-purple hover:shadow-neon-magenta transition-all">
+          <div className="flex items-center justify-center h-16 w-32 bg-dark-brick border border-neon-purple rounded px-4 shadow-neon-magenta hover:shadow-neon-magenta hover:brightness-110 transition-all">
             <span className="text-neutral-white/60 text-sm font-semibold">Fountain Room @ Pourhouse</span>
           </div>
         </div>
