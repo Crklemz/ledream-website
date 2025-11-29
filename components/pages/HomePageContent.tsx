@@ -26,7 +26,6 @@ import { ScrollButton } from "@/components/ui/ScrollButton";
 import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 import { NeonCard } from "@/components/ui/NeonCard";
 import { PackageCard } from "@/components/sections/PackageCard";
-import { ProjectCard } from "@/components/sections/ProjectCard";
 import { TestimonialCard } from "@/components/sections/TestimonialCard";
 import { IconFeature } from "@/components/ui/IconFeature";
 import { VideoBackground } from "@/components/ui/VideoBackground";
@@ -38,7 +37,6 @@ import {
 } from "@/content/home";
 import { contactInfo } from "@/content/site";
 import { packages } from "@/content/services";
-import { featuredPortfolioProjects } from "@/content/portfolio";
 import { processSteps } from "@/content/process";
 
 export function HomePageContent() {
@@ -46,17 +44,6 @@ export function HomePageContent() {
   const packageCards = packages.map((pkg) => ({
     ...pkg,
     features: pkg.features.slice(0, 4), // Top 4 features for homepage preview
-  }));
-
-  // Map projects to ProjectCard format
-  const projectCards = featuredPortfolioProjects.map((project) => ({
-    title: project.title,
-    description: project.description,
-    category: project.category,
-    image: project.images[0] || "/1.JPG",
-    imageAlt: project.title,
-    videoUrl: project.videoUrl,
-    href: `/portfolio#${project.id}`,
   }));
 
   // Process steps with icons
@@ -350,18 +337,11 @@ export function HomePageContent() {
         <div className="absolute inset-0 bg-dark-black/70" />
         {/* Content */}
         <div className="relative z-10">
-          <div className="text-center mb-16" id="portfolio">
+          <div className="text-center mb-12" id="portfolio">
             <h2 className="text-h2 text-neutral-white mb-4">Our Latest Masterpieces</h2>
             <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
               Visit our gallery of memories & imagine the endless possibilities
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {projectCards.map((project, index) => (
-              <FadeInOnScroll key={project.title} delay={index * 100}>
-                <ProjectCard project={project} />
-              </FadeInOnScroll>
-            ))}
           </div>
           <div className="text-center">
             <CTAButton
