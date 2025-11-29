@@ -167,7 +167,7 @@ module.exports = {
             opacity: '1',
           },
           '50%': {
-            textShadow: '0 0 15px currentColor, 0 0 25px currentColor, 0 0 35px currentColor',
+            textShadow: '0 0 5px currentColor, 0 0 8px currentColor, 0 0 10px currentColor',
             opacity: '1',
           },
         },

@@ -265,6 +265,10 @@
   .neon-text-magenta.animate-glow-pulse-slow,
   .neon-text-green.animate-glow-pulse-slow {
     text-shadow: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
   }
 
   /* When animated, combine animations smoothly - animate filter for multicolor */
@@ -272,19 +276,23 @@
     animation: gradient-shift 3s ease infinite, glow-pulse-slow-filter 2s ease-in-out infinite;
     will-change: filter, background-position;
     transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    backface-visibility: hidden;
     /* Animation will override the base filter */
   }
   
-  /* Separate filter animation for multicolor text */
+  /* Separate filter animation for multicolor text - reduced blur for sharper text */
   @keyframes glow-pulse-slow-filter {
     0%, 100% {
       filter: drop-shadow(0 0 2px var(--neon-red)) 
               drop-shadow(0 0 3px var(--neon-purple));
     }
     50% {
-      filter: drop-shadow(0 0 10px var(--neon-red)) 
-              drop-shadow(0 0 15px var(--neon-purple)) 
-              drop-shadow(0 0 20px var(--neon-blue));
+      filter: drop-shadow(0 0 4px var(--neon-red)) 
+              drop-shadow(0 0 5px var(--neon-purple)) 
+              drop-shadow(0 0 6px var(--neon-blue));
     }
   }
 

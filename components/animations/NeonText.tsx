@@ -86,7 +86,13 @@ export function NeonText({
         "transition-all duration-normal",
         className
       )}
-      style={animated ? { transform: 'translateZ(0)' } : undefined}
+      style={animated ? { 
+        transform: 'translateZ(0)',
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+        textRendering: 'optimizeLegibility',
+        backfaceVisibility: 'hidden'
+      } : undefined}
     >
       {text}
     </Component>
