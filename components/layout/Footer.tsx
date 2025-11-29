@@ -5,7 +5,6 @@ import {
   Instagram,
   Facebook,
   Youtube,
-  Linkedin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
@@ -37,12 +36,6 @@ const socialLinks = [
     href: "https://youtube.com/@afterglow_mpls?si=MXpSfPTqwWTahCZH",
     icon: Youtube,
     ariaLabel: "Visit LEDream on YouTube",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/company/ledream",
-    icon: Linkedin,
-    ariaLabel: "Visit LEDream on LinkedIn",
   },
 ];
 

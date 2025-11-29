@@ -53,10 +53,5 @@ export const socialLinks: SocialLink[] = [
     url: "https://youtube.com/@afterglow_mpls?si=MXpSfPTqwWTahCZH",
     label: "Visit LEDream on YouTube",
   },
-  {
-    platform: "linkedin",
-    url: "https://linkedin.com/company/ledream", // Placeholder
-    label: "Visit LEDream on LinkedIn",
-  },
 ];
 
