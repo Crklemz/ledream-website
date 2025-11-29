@@ -214,7 +214,7 @@ export function AboutPageContent() {
       </SectionContainer>
 
       {/* Meet Your Guide Section */}
-      <SectionContainer variant="darker" className="bg-dark-brick/30">
+      <SectionContainer variant="darker">
         <div className="text-center mb-12">
           <h2 className="text-h2 text-neutral-white mb-4">Your LEDream Curator</h2>
         </div>
