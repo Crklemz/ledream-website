@@ -338,28 +338,40 @@ export function HomePageContent() {
       </SectionContainer>
 
       {/* Featured Projects Gallery */}
-      <SectionContainer variant="dark">
-        <div className="text-center mb-16" id="portfolio">
-          <h2 className="text-h2 text-neutral-white mb-4">Our Latest Masterpieces</h2>
-          <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
-            Visit our gallery of memories & imagine the endless possibilities
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {projectCards.map((project, index) => (
-            <FadeInOnScroll key={project.title} delay={index * 100}>
-              <ProjectCard project={project} />
-            </FadeInOnScroll>
-          ))}
-        </div>
-        <div className="text-center">
-          <CTAButton
-            text="View Full Portfolio"
-            href="/portfolio"
-            variant="primary"
-            size="lg"
-            icon={ArrowRight}
-          />
+      <SectionContainer variant="dark" className="relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/12.jpg)',
+          }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-dark-black/70" />
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="text-center mb-16" id="portfolio">
+            <h2 className="text-h2 text-neutral-white mb-4">Our Latest Masterpieces</h2>
+            <p className="text-lg text-neutral-white/80 max-w-2xl mx-auto">
+              Visit our gallery of memories & imagine the endless possibilities
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+            {projectCards.map((project, index) => (
+              <FadeInOnScroll key={project.title} delay={index * 100}>
+                <ProjectCard project={project} />
+              </FadeInOnScroll>
+            ))}
+          </div>
+          <div className="text-center">
+            <CTAButton
+              text="View Full Portfolio"
+              href="/portfolio"
+              variant="primary"
+              size="lg"
+              icon={ArrowRight}
+            />
+          </div>
         </div>
       </SectionContainer>
 
