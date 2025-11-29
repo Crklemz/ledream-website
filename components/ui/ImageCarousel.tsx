@@ -109,23 +109,6 @@ export function ImageCarousel({ images, className }: ImageCarouselProps) {
           </div>
         ))}
       </div>
-
-      {/* Dot indicators */}
-      <div className="flex justify-center gap-2 mt-6">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToIndex(index)}
-            className={cn(
-              "w-2 h-2 rounded-full transition-all duration-300",
-              currentIndex === index
-                ? "bg-neon-blue w-8"
-                : "bg-neutral-white/30 hover:bg-neutral-white/50"
-            )}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 }

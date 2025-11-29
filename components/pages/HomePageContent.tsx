@@ -151,14 +151,15 @@ export function HomePageContent() {
         <div className="mt-16">
           <ImageCarousel
             images={[
-              "/3.jpg",
-              "/5.JPG",
+              "/2.JPG",
+              "/4.JPG",
+              "/21.JPG",
+              "/12.jpg",
+              "/18.jpg",
+              "/17.jpg",
               "/6.JPG",
-              "/7.JPG",
-              "/8.JPG",
-              "/10.JPG",
-              "/11.JPG",
               "/1.JPG",
+              "/3.jpg",
             ]}
           />
         </div>

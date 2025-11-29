@@ -176,7 +176,7 @@ export function ServicesPageContent() {
       </section>
 
       {/* Package Showcase Section */}
-      <SectionContainer variant="darker" className="bg-brick-wall">
+      <SectionContainer variant="darker">
         <div className="text-center mb-12">
           <FadeInOnScroll delay={0}>
             <h2 className="text-h2 text-neutral-white mb-4">Choose Your LEDream Experience</h2>
