@@ -115,7 +115,7 @@ export function Footer() {
 
               {/* Email */}
               <a
-                href="mailto:jesterdapperdan@gmail.com"
+                href="mailto:portal@ledream.art"
                 className={cn(
                   "flex items-center gap-3 text-sm text-neutral-white/80",
                   "transition-colors duration-normal",
@@ -123,10 +123,10 @@ export function Footer() {
                   "focus:outline-none focus:ring-2 focus:ring-neon-blue focus:ring-offset-2 focus:ring-offset-dark-black rounded-sm",
                   "break-all"
                 )}
-                aria-label="Email LEDream at jesterdapperdan@gmail.com"
+                aria-label="Email LEDream at portal@ledream.art"
               >
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>jesterdapperdan@gmail.com</span>
+                <span>portal@ledream.art</span>
               </a>
 
               {/* Social Media Icons */}
