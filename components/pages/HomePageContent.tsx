@@ -364,19 +364,19 @@ export function HomePageContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Placeholder Testimonials - Replace with actual testimonials */}
           <TestimonialCard
-            quote="LEDream transformed our space into something truly magical. The attention to detail and creative vision exceeded all expectations."
+            quote="LEDream transformed our space into something truly magical. Great attention to detail and creative vision."
             client="Sarah M."
             project="Residential Installation"
             rating={5}
           />
           <TestimonialCard
-            quote="Our event was unforgettable thanks to LEDream. The lighting created an atmosphere that our guests are still talking about months later."
+            quote="Our event was unforgettable. The lighting created an atmosphere that our guests are still talking about."
             client="Michael R."
             project="Event Space Transformation"
             rating={5}
           />
           <TestimonialCard
-            quote="Working with LEDream was seamless from start to finish. Professional, creative, and absolutely stunning results."
+            quote="Working with LEDream was seamless from start to finish. Professional, creative, and modern team."
             client="Jennifer L."
             project="Commercial Installation"
             rating={5}
