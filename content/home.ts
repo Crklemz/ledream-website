@@ -11,7 +11,7 @@ export const homeMetadata: PageMetadata = {
   title: "LEDream - Where Modern Art & Life Become One",
   description:
     "Immersive fantasy LED lightning & psychedelic art installations in Mpls.", 
-    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece with cutting-edge LED tech."
+    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece with cutting-edge LED tech.",
   keywords: [
     "LED art",
     "LED installation",
@@ -28,7 +28,7 @@ export const heroContent: HeroContent = {
   headline: "Where Modern Art & Life Become One",
   subheadline:
     "Immersive fantasy LED lightning & psychedelic art installations in Mpls.",
-    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece."
+    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece.",
   ctaText: "Begin Your Journey",
   ctaHref: "https://tally.so/r/b5ZZE7",
 };
