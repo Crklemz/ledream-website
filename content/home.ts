@@ -10,7 +10,7 @@ import type { HeroContent, Project, Package, PageMetadata } from "./types";
 export const homeMetadata: PageMetadata = {
   title: "LEDream - Where Modern Art & Life Become One",
   description:
-    "Immersive fantasy LED lighting & psychedelic art installations in Mpls. We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece with cutting-edge LED tech.",
+    "Immersive fantasy LED lighting & psychedelic art installations in Minneapolis-Saint Paul.",
   keywords: [
     "LED art",
     "LED installation",
