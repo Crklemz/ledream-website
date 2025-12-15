@@ -2,7 +2,7 @@ import type { HeroContent, Project, Package, PageMetadata } from "./types";
 
 /**
  * Home Page Content
- * 
+ * <meta name="google-site-verification" content="eOIvOVXVXSrgNJ7_9_PcHNc_d53_Jzfkp354Nrq_2OQ" />
  * Content for the homepage including hero section, featured projects,
  * and package overview.
  */
