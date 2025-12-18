@@ -2,7 +2,7 @@ import type { HeroContent, Project, Package, PageMetadata } from "./types";
 
 /**
  * Home Page Content
- * 
+ * <meta name="google-site-verification" content="eOIvOVXVXSrgNJ7_9_PcHNc_d53_Jzfkp354Nrq_2OQ" />
  * Content for the homepage including hero section, featured projects,
  * and package overview.
  */
@@ -10,7 +10,7 @@ import type { HeroContent, Project, Package, PageMetadata } from "./types";
 export const homeMetadata: PageMetadata = {
   title: "LEDream - Where Modern Art & Life Become One",
   description:
-    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece through cutting-edge LED installations.",
+    "Immersive fantasy LED lighting & psychedelic art installations in Minneapolis-Saint Paul.",
   keywords: [
     "LED art",
     "LED installation",
@@ -26,7 +26,7 @@ export const homeMetadata: PageMetadata = {
 export const heroContent: HeroContent = {
   headline: "Where Modern Art & Life Become One",
   subheadline:
-    "We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece.",
+    "Immersive fantasy LED lighting & psychedelic art installations in Mpls. We're dream-weavers, reality-shifters and experts of psychedelic fantasy. We transform any space into a living art masterpiece.",
   ctaText: "Begin Your Journey",
   ctaHref: "https://tally.so/r/b5ZZE7",
 };

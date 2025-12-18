@@ -17,17 +17,40 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "LEDream",
-  description: "LEDream Website",
+  title: "LEDream - Immersive Fantasy LED Art",
+  description:
+    "Immersive fantasy LED lighting & psychedelic art installations in Minneapolis–Saint Paul.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="dark scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "LEDream",
+              url: "https://ledream.art",
+              description:
+                "Immersive fantasy LED lighting & psychedelic art installations in Minneapolis–Saint Paul.",
+              email: "portal@ledream.art",
+              areaServed: {
+                "@type": "AdministrativeArea",
+                name: "Minneapolis–Saint Paul, MN",
+              },
+              sameAs: ["https://mplspartyhub.social"],
+            }),
+          }}
+        />
+      </head>
+
       <body className={`${inter.variable} ${montserrat.variable} font-body`}>
         <Header />
         <main className="pt-16 md:pt-20">{children}</main>
@@ -36,4 +59,3 @@ export default function RootLayout({
     </html>
   );
 }
-
