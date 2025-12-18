@@ -13,6 +13,33 @@ import { contactInfo } from "@/content/site";
  * 
  * Displays LEDream's project gallery with filtering and call-to-action sections.
  */
+
+/**
+ * Extracts YouTube video ID from various YouTube URL formats
+ */
+function extractYouTubeVideoId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+    /youtube\.com\/watch\?.*v=([^&\n?#]+)/,
+  ];
+  
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * Generates YouTube thumbnail URL from video ID
+ */
+function getYouTubeThumbnailUrl(videoId: string): string {
+  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
 export default function PortfolioPage() {
 
   // Build structured data for portfolio
@@ -24,21 +51,40 @@ export default function PortfolioPage() {
     url: "https://ledream.com/portfolio",
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: projects.map((project, index) => ({
-        "@type": "CreativeWork",
-        position: index + 1,
-        name: project.title,
-        description: project.description,
-        category: project.category,
-        image: project.images[0] ? `https://ledream.com${project.images[0]}` : undefined,
-        video: project.videoUrl && project.videoUrl !== "TBD"
-          ? {
-              "@type": "VideoObject",
-              embedUrl: project.videoUrl,
-              name: project.title,
-            }
-          : undefined,
-      })),
+      itemListElement: projects.map((project, index) => {
+        let videoObject: Record<string, unknown> | undefined;
+        
+        if (project.videoUrl && project.videoUrl !== "TBD") {
+          const videoId = extractYouTubeVideoId(project.videoUrl);
+          
+          videoObject = {
+            "@type": "VideoObject",
+            embedUrl: project.videoUrl,
+            name: project.title,
+            description: project.description,
+          };
+          
+          // Add thumbnailUrl if we can extract video ID
+          if (videoId) {
+            videoObject.thumbnailUrl = getYouTubeThumbnailUrl(videoId);
+          }
+          
+          // Add uploadDate if available
+          if (project.uploadDate) {
+            videoObject.uploadDate = project.uploadDate;
+          }
+        }
+        
+        return {
+          "@type": "CreativeWork",
+          position: index + 1,
+          name: project.title,
+          description: project.description,
+          category: project.category,
+          image: project.images[0] ? `https://ledream.com${project.images[0]}` : undefined,
+          video: videoObject,
+        };
+      }),
     },
   };
 

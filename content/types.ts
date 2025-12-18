@@ -56,6 +56,7 @@ export interface Project {
   description: string;
   category: ProjectCategory;
   videoUrl?: string;
+  uploadDate?: string; // ISO 8601 date format (YYYY-MM-DD) for video structured data
   images: string[];
   tags: string[];
   featured: boolean;
